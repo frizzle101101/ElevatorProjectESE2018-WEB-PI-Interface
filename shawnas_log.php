@@ -7,23 +7,10 @@
 		<meta name="description" content="Shawnas log Page">
 	</head>
 	<title></title>
-	
-		
-	
-	<body class="header">
-		<ul>
-			<li><a href="index.php">Home</a></li>
-			<li><a href="plan.php">Project Plan</a></li>
-			<li><div class="dropdown">Logs
-					<div class="dropdown-content">
-						<a href="aarons_log.php">Aaron's</a>
-						<a href="shawnas_log.php">Shawna's</a>
-						<a href="andrews_log.php">Andrew's</a>
-					</div>
-				</div>
-			</li>
-			<li><a href="about.html">About</a></li>
-			<li class="login"><a href="login.php">Login</a></li>
-		</ul>
-	</body>
+
+
+
+	<div include-html="menu.html"></div>
+	<footer>Copyright &copy Shawna.</footer>
+	<script>includeHTML();</script>
 </html>
