@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login</title>
+		<link href="/style.css" type="text/css" rel="stylesheet">
+	</head>
+
+	<body>
+		<hl>Request Access</hl>
+		<form action="request_access.php" method="post">
+			<fieldset>
+				<legend>Login Details</legend>
+					<p>Usemame: <input type="text" name="username" required/> </p>
+					<p>Password: <input type="password" id="password" name="password" required /> </p>
+					<p>Confirm Password: <input type="password" id="confirm_password" name="comfirm_password" onclick="validatePassword()" required /> </p>
+				</legend>
+			</fieldset>
+			<fieldset>
+				<legend>Contact Details</legend>
+				<p><label>First Name: <input type="text" name="firstname" /></label> </p> <p><label>Last Name: <input type-"text" name-" las tname" /></label> </p> <p><label>Email:	<input type="email" naire="email" /></label> </p>
+				<p><label>Website:	<input type="url" name="url" /></label> </p>
+				<p><label>Birth date: <input type="date" name="birthday" /></label> </p> <label><input type="radio" name="fac_or_student" value»"faculty" /> Faculty </label> <label><input type="radio" name="fac or student" value="student" /> Student </label>
+				<p>I currently ... (check all that apply)</p>
+				<input type="checkbox" name="involvement" value="none" /> Have no involment in Project <br />
+				<input type="checkbox" name="involvement" value="instructor" /> An instructor in this Project <br />
+				<input type="checkbox" name="involvement" value="instructor_other" /> An instructor in a different Project <br />
+				<input type="checkbox" name="involvement" value="student" /> A student in this Project <br />
+				<input type="checkbox" name="involvement" value="student_other" /> A student in a different Project <br />
+				<input type="checkbox" name="involvement" value="admin" /> A College Administrator <br />
+				<input type="checkbox" name="involvement" value="extemal" /> An external reviewer <br />
+				<p>Tell us a bit about yourself</p>
+				<textarea>Other details ... </textarea><br />
+				<input type="submit" value="Submit Request"/>
+			</fieldset>
+		</form>
+		<script>
+		var password = document.getElementById("password");
+		var confirm_password = document.getElementById("confirm_password");
+		function validatePassword(){
+		  if(password.value != confirm_password.value) {
+		    confirm_password.setCustomValidity("Passwords Don't Match");
+		  } else {
+		    confirm_password.setCustomValidity('');
+		  }
+		}
+		</script>
+	</body>
+
+	<footer>Copyright &copy Aaron.</footer>
+</html>
