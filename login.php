@@ -1,7 +1,6 @@
 <?php
-require 'html/menu.html';
+require 'menu.php';
 
-session_start();
 if(isset($_SESSION['username']))
 {
   echo "You are loged in, will redirect you to account page";

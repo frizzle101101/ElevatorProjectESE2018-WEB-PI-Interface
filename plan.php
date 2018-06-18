@@ -1,4 +1,4 @@
 <?php
-require 'html/menu.html';
+  require 'menu.php';
 require 'html/plan.html';
 ?>

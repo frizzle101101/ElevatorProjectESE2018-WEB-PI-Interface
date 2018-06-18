@@ -21,7 +21,7 @@
     display: block;
 }
 
-ul {
+ul.menu {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -29,11 +29,18 @@ ul {
     background-color: #333;
 }
 
-li {
+li.menu {
     float: left;
 }
 
-li a {
+li#login.menu {
+	float: right;
+}
+li#logout.menu {
+	float: right;
+}
+
+li.menu a {
     display: block;
     color: white;
     text-align: center;
@@ -41,11 +48,9 @@ li a {
     text-decoration: none;
 }
 
-.login {
-	float: right;
-}
+
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
+li.menu > a:hover {
     background-color: #111;
 }

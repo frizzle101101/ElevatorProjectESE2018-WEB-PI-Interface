@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="css/menu_style.css" type="text/css" rel="stylesheet">
+    <link href="../css/menu_style.css" type="text/css" rel="stylesheet">
   </head>
-  <body class="menu">
-    <ul>
-      <li><a href="index.php">Home</a></li>
-      <li><a href="plan.php">Project Plan</a></li>
-      <li><div class="dropdown">Logs
+  <body>
+    <ul class="menu">
+      <li class="menu"><a href="index.php">Home</a></li>
+      <li class="menu"><a href="plan.php">Project Plan</a></li>
+      <li class="menu"><div class="dropdown">Logs
           <div class="dropdown-content">
             <a href="aarons_log.php">Aaron's</a>
             <a href="shawnas_log.php">Shawna's</a>
@@ -15,8 +15,8 @@
           </div>
         </div>
       </li>
-      <li><a href="about.php">About</a></li>
-      <li class="login"><a href="login.php">Login</a></li>
+      <li class="menu"><a href="about.php">About</a></li>
+      <li id="login" class="menu"><a href="login.php">Login</a></li>
     </ul>
   </body>
 </html>

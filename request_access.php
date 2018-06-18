@@ -1,12 +1,12 @@
 <?php
-  require 'html/menu.html';
+  require 'menu.php';
   require 'PDOMySQL.php';
   $PDOMySQL = new PDOMySQL();
   session_start();
   if(!empty($_POST))
   {
     foreach ($_POST['interest'] as $key => $value) {
-      $interest = $interest.$value;
+      $interest = $interest. $value;
     }
     $PDOMySQL->insertUser(
       $_POST['username'],

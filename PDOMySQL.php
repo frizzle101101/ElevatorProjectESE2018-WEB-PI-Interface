@@ -13,10 +13,9 @@ class PDOMySQL{
 		$connection = new PDO("mysql:dbname=$db;host=$host", $username, $password);
 		return $connection;
 	}
-	protected function queryList($sql, $args){
+	public function queryList($sql){
 		$connection = $this->getConnection();
-		$stmt = $connection->prepare($sql);
-		$stmt->execute($args);
+		$stmt = $connection->query($sql);
 		return $stmt;
 	}
 	public function insertUser(
