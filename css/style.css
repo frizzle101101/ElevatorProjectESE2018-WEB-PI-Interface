@@ -1,4 +1,52 @@
 
-footer {
-    display:block;
+footer {font-family: verdana, serif;;
+	color: #111;
+	background-color: #999
+}
+
+body {font-family: verdana, serif;;
+	color: #111;
+	background-color: #999
+}
+
+.formlabel{width:100px;
+	text-align: right;
+}
+
+.formtext{width:300px;
+}
+
+form {width:600px;
+}
+
+fieldset{
+	width: 580px;
+	border-radius: 10px;
+	border: solid white 2px;
+}
+
+
+fieldset p {float: right;
+}
+
+legend{background-color: teal;
+	color:black;
+	border: solid white 2px;
+	border-radius: 10px;
+}
+
+.submitbutton {float:right;
+	border-radius: 10px;
+}
+
+input.submitbutton:default{
+	background-color: white;
+}
+
+input.submitbutton:hover{
+	background-color: grey;
+}
+
+input.submitbutton:active{
+	background-color: teal;
 }

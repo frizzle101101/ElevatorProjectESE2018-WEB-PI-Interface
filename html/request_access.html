@@ -22,8 +22,9 @@
 				<p><label>Email:	<input type="email" name="email" required /></label> </p>
 				<p><label>Website:	<input type="url" name="website" /></label> </p>
 				<p><label>Birth date: <input type="date" name="birth_date" /></label> </p>
-				<label><input type="radio" name="user_type" value="faculty" required/> Faculty </label>
+				<p><label><input type="radio" name="user_type" value="faculty" required/> Faculty </label>
 				<label><input type="radio" name="user_type" value="student" required/> Student </label>
+			</p>
 				<p>I currently ... (check all that apply)</p>
 				<input type="checkbox" name="interest" value="none" /> Have no involment in Project <br />
 				<input type="checkbox" name="interest" value="instructor" /> An instructor in this Project <br />
@@ -32,9 +33,9 @@
 				<input type="checkbox" name="interest" value="student_other" /> A student in a different Project <br />
 				<input type="checkbox" name="interest" value="admin" /> A College Administrator <br />
 				<input type="checkbox" name="interest" value="extenal" /> An external reviewer <br />
-				<p>Tell us a bit about yourself</p>
+				<p>Tell us a bit about yourself<br />
 				<textarea placeholder="Other details ... "></textarea><br />
-				<input type="submit" value="Submit Request" onclick="validatePassword()"/>
+				<input type="submit" value="Submit Request" onclick="validatePassword()"/></p>
 			</fieldset>
 		</form>
 		<script>
