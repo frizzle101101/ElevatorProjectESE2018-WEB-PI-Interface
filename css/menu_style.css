@@ -1,4 +1,5 @@
 .dropdown {
+	font-family: verdana, serif;
     display: block;
     color: white;
     text-align: center;
@@ -7,6 +8,7 @@
 }
 
 .dropdown-content {
+	font-family: verdana, serif;
     display: none;
     position: absolute;
     background-color: #333;
@@ -22,6 +24,7 @@
 }
 
 ul.menu {
+	font-family: verdana, serif;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -30,17 +33,21 @@ ul.menu {
 }
 
 li.menu {
+	font-family: verdana, serif;
     float: left;
 }
 
 li#login.menu {
+	font-family: verdana, serif;
 	float: right;
 }
 li#logout.menu {
+	font-family: verdana, serif;
 	float: right;
 }
 
 li.menu a {
+	font-family: verdana, serif;
     display: block;
     color: white;
     text-align: center;

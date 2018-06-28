@@ -1,52 +1,77 @@
 
-footer {font-family: verdana, serif;;
-	color: #111;
-	background-color: #999
+footer {font-family: verdana, serif;
+	color: #555555;
+	background-color: #aaaaaa;
+	text-align: center;
 }
 
-body {font-family: verdana, serif;;
-	color: #111;
-	background-color: #999
+body {font-family: verdana, serif;
+	color: #555555;
+	background-color: #aaaaaa;
+
 }
 
+/*
 .formlabel{width:100px;
 	text-align: right;
 }
+*/
 
-.formtext{width:300px;
+/*
+.formtext{width:auto;
 }
+*/
+input.inputbox {
+	float: right;
 
-form {width:600px;
 }
-
+/*
 fieldset{
 	width: 580px;
 	border-radius: 10px;
 	border: solid white 2px;
 }
+*/
+fieldset {width: auto;}
+fieldset p {
+
+	color:#555555;
 
 
-fieldset p {float: right;
+	margin: auto;
+	width: auto;
+
 }
-
-legend{background-color: teal;
-	color:black;
-	border: solid white 2px;
-	border-radius: 10px;
+fieldset label {
+	font-weight: normal;
+}
+/*
+form {background-color: #888888;
+	color:#555555;
+	border: solid white 1px;
+	border-radius: 3px;
+}*/
+legend{background-color: #888888;
+	color:#555555;
+	border: solid #111111 1px;
+	border-radius: 3px;
 }
 
 .submitbutton {float:right;
-	border-radius: 10px;
+	border-radius: 3px;
 }
 
 input.submitbutton:default{
 	background-color: white;
+	color: black;
 }
 
 input.submitbutton:hover{
 	background-color: grey;
+	color: black;
 }
 
 input.submitbutton:active{
-	background-color: teal;
+	background-color: black;
+	color: white;
 }
