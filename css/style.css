@@ -26,39 +26,43 @@ input.inputbox {
 	float: right;
 
 }
-/*
-fieldset{
-	width: 580px;
-	border-radius: 10px;
-	border: solid white 2px;
+
+fieldset {
+  margin: 20px;
+  padding: 0 10px 10px;
+  border: 1px solid #666;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #666;
+  background-color: #555555;
+	color: white;
 }
-*/
-fieldset {width: auto;}
-fieldset p {
-
-	color:#555555;
-
-
-	margin: auto;
-	width: auto;
-
-}
-fieldset label {
-	font-weight: normal;
-}
-/*
-form {background-color: #888888;
-	color:#555555;
-	border: solid white 1px;
-	border-radius: 3px;
-}*/
-legend{background-color: #888888;
-	color:#555555;
-	border: solid #111111 1px;
-	border-radius: 3px;
+fieldset input{
+	color: black;
 }
 
-.submitbutton {float:right;
+
+legend {
+  display: block;
+  width: inherit;
+  padding: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 21px;
+  line-height: inherit;
+  color: #555555;
+  background-color: #888888;
+  border: 3px solid;
+  border-color: #DAA520;
+  border-radius: 5px;
+}
+
+textarea {
+	max-width: 100%;
+	max-height: 85px;
+	color: black;
+}
+.submitbutton {
+	float:right;
 	border-radius: 3px;
 }
 

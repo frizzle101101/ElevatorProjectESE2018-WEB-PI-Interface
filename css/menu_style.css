@@ -1,4 +1,4 @@
-.dropdown {
+.mydropdown {
 	font-family: verdana, serif;
     display: block;
     color: white;
@@ -7,7 +7,7 @@
     text-decoration: none;
 }
 
-.dropdown-content {
+.mydropdown-content {
 	font-family: verdana, serif;
     display: none;
     position: absolute;
@@ -17,9 +17,11 @@
     padding: 12px 16px;
     z-index: 1;
 }
-
+.mydropdown:hover {
+		background-color: #111;
+}
 /*show dropdown on hover*/
-.dropdown:hover .dropdown-content {
+.mydropdown:hover .mydropdown-content {
     display: block;
 }
 
@@ -58,6 +60,6 @@ li.menu a {
 
 
 /* Change the link color to #111 (black) on hover */
-li.menu > a:hover {
+li.menu > a:hover, div.mydropdown-content > a:hover {
     background-color: #111;
 }

@@ -2,7 +2,6 @@
   require 'menu.php';
   require 'PDOMySQL.php';
   $PDOMySQL = new PDOMySQL();
-  session_start();
   if(!empty($_POST))
   {
     foreach ($_POST['interest'] as $key => $value) {
