@@ -1,7 +1,7 @@
 <?php
 class PDOMySQL{
-	const USERNAME="root";
-	const PASSWORD="";
+	const USERNAME="pi";
+	const PASSWORD="ese";
 	const HOST="127.0.0.1";
 	const DB="eprojese2018db";
 
