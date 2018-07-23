@@ -1,5 +1,10 @@
+<?php
+session_start();
+?>
+
 <html>
   <head>
+    <link rel="icon" href="favicon.ico">
     <link href="../css/menu_style.css" type="text/css" rel="stylesheet">
   </head>
   <body>
@@ -16,17 +21,15 @@
       </li>
       <li class="menu"><a href="about.php">About</a></li>
 <?php
-session_start();
-
 if(isset($_SESSION['username']))
 {
-  echo '<li id="logout" class="menu"><a href="logout.php">Logout</a></li>';
+  echo '<li id="elevator_control" class="menu"><a href="elevator_control.php">Elevator Control</a></li>
+        <li id="logout" class="menu"><a href="logout.php">Logout</a></li>';
 }
 else
 {
   echo '<li id="login" class="menu"><a href="login.php">Login</a></li>';
 }
-
 ?>
 
     </ul>
