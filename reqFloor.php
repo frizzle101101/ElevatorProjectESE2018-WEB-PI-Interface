@@ -1,4 +1,5 @@
 <?php
+  require 'PDOMySQL.php';
   // get the q parameter from URL
   $q = $_REQUEST["q"];
   // lookup all hints from array if $q is different from ""
