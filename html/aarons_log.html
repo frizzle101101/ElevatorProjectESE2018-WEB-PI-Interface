@@ -52,6 +52,36 @@
 		<li>Creating account page</li>
 		<li>Fininshing functionality of the login, request access and log out. So can start working on web-pi-hardware interface from database</li>
 	</ul>
+	<h2 id="week7">Week 7</h2>
+	<ul>
+		<li>Spreading session functionality to menu</li>
+		<li>Implementing door functionality in car controller</li>
+	</ul>
+	<h2 id="week8">Week 8</h2>
+	<ul>
+		<li>Created SC(supivisor controller) mode from example code bits to run elevator from database and can interface</li>
+		<li>Testing elevator from floor and car buttons but having issues with what seems to be droped CAN frames when floor requests want to be made</li>
+	</ul>
+	<h2 id="week9">Week 9</h2>
+	<ul>
+		<li>Fixed SC mode code so that no linux sleeps are used, requests from can interface work as desired</li>
+		<li>Creating elevartor control page</li>
+		<li>Designing the database structure to use a log and a que for requests</li>
+	</ul>
+	<h2 id="week10">Week 10</h2>
+	<ul>
+		<li>Updating bootstrap and css on menu, login and request access pages so there is a better layout of inputs in any width of browser </li>
+		<li>Continued converting and implementing c++ code Object Oriented</li>
+		<li>Implementing databases, elv_req_log and elv_req_que, que references a row(likely ther latest rows) in the log table</li>
+		<li>Testing database que with presing many buttons quickly</li>
+		<ul>
+			<li>Que shows the requests that havent been served yet</li>
+			<li>Log shows all requests</li>
+			<li>Elevator moves after request is made</li>
+			<li>Elevator moves through que leaving no unserved requests</li>
+		</ul>
+		<li>Updating <a href='https://github.com/frizzle101101/ElevatorProjectESE2018'>Github page</a> for Phase 2, pegging latest working code to the main project</li>
+	</ul>
 	</body>
 
 	<footer>Copyright &copy <span id='copydate'> </span> Aaron Fritz.</footer>
