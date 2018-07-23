@@ -15,6 +15,23 @@
 					<div class="col-md-4"></div>
 					<div class="col-md-4">
 						<canvas style="border: 3px solid" id="elvAnimation"></canvas>
+						<input type="submit" id="req1" value="Request 1" class="submitbutton" />
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-4"></div>
+					<div class="col-md-4">
+						<canvas style="border: 3px solid" id="elvAnimation"></canvas>
+						<input type="submit" id="req2" value="Request 2" class="submitbutton" />
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-4"></div>
+					<div class="col-md-4">
+						<canvas style="border: 3px solid" id="elvAnimation"></canvas>
+						<input type="submit" id="req3" value="Request 3" class="submitbutton" />
 					</div>
 					<div class="col-md-4"></div>
 				</div>
@@ -95,6 +112,23 @@
   elvImage.addEventListener("load", gameLoop);
 
 
+	function reqFloor(str) {
+	        var xmlhttp = new XMLHttpRequest();
+	        xmlhttp.onreadystatechange = function() {
+	            if (this.readyState == 4 && this.status == 200) {
+	                document.getElementById("txtHint").innerHTML = this.responseText;
+	            }
+	        };
+	        xmlhttp.open("GET", "reqFloor.php?q=" + str, true);
+	        xmlhttp.send();
+	}
 
+	var fBtn1 = document.getElementById("req1");
+	var fBtn2 = document.getElementById("req2");
+	var fBtn3 = document.getElementById("req3");
+
+	fBtn1.addEventListener("click", reqFloor(1));
+	fBtn2.addEventListener("click", reqFloor(2));
+	fBtn3.addEventListener("click", reqFloor(3));
   </script>
 </html>
