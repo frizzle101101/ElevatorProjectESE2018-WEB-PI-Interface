@@ -4,7 +4,8 @@ session_start();
 
 <html>
   <head>
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
     <link href="../css/menu_style.css" type="text/css" rel="stylesheet">
   </head>
   <body>
