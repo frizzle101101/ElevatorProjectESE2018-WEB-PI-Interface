@@ -113,14 +113,17 @@
 
 
 	function reqFloor(str) {
-	        var xmlhttp = new XMLHttpRequest();
-	        xmlhttp.onreadystatechange = function() {
-	            if (this.readyState == 4 && this.status == 200) {
-	                document.getElementById("txtHint").innerHTML = this.responseText;
-	            }
-	        };
-	        xmlhttp.open("GET", "reqFloor.php?q=" + str, true);
-	        xmlhttp.send();
+		var xhttp;
+	  if (str == "") {
+	    return;
+	  }
+	  xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	    }
+	  };
+	  xhttp.open("GET", "reqFloor.php?q="+str, true);
+	  xhttp.send();
 	}
 
 	var fBtn1 = document.getElementById("req1");
