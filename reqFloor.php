@@ -2,10 +2,10 @@
   require 'PDOMySQL.php';
   $PDOMySQL = new PDOMySQL();
   // get the q parameter from URL
-  $q = $_REQUEST["q"];
+  $q = intval($_GET['q']);
   // lookup all hints from array if $q is different from ""
   if ($q !== "") {
-      $PDOMySQL->requestFloor((int)$q);
+      $PDOMySQL->requestFloor($q);
   }
 
 

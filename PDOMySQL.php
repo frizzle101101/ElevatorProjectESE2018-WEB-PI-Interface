@@ -91,6 +91,9 @@ class PDOMySQL{
 	}
 	public function requestFloor($floornum)
 	{
+		$nodeID = 0x200;
+		$status = 0;
+		$currentFloor = 0;
 		$db = $this->getConnection();
 
 		$curr_date_query = $db->query('SELECT CURRENT_DATE()');
@@ -99,22 +102,22 @@ class PDOMySQL{
 		$curr_time = $curr_time_query->fetch(PDO::FETCH_ASSOC);
 
 		$stmt = $db->prepare(
-			'INSERT INTO elv_req_log (nodeID,date,time,status,currentFloor,requestedFloor)
+			'INSERT INTO elv_req_log(nodeID,date,time,status,currentFloor,requestedFloor)
 			VALUES (:nodeID,:date,:time,:status,:currentFloor,:requestedFloor)'
 		);
 		$params = [
-			'nodeID' => 0x200,
-			'date' => $curr_date,
-			'time' => $curr_time,
-			'status' => 0,
-			'currentFloor' => 0,
+			'nodeID' => $nodeID,
+			'date' => $curr_date['CURRENT_DATE()'],
+			'time' => $curr_time['CURRENT_TIME()'],
+			'status' => $status,
+			'currentFloor' => $currentFloor,
 			'requestedFloor' => $floornum
 		];
 		$stmt->execute($params);
 		$reqId_query = $db->query("SELECT reqId FROM elv_req_log ORDER BY reqId DESC LIMIT 1");
 		$reqId = $reqId_query->fetch(PDO::FETCH_ASSOC);
 		$stmt = $db->prepare(
-			'INSERT INTO elv_req_que (reqId)
+			'INSERT INTO elv_req_que(reqId)
 			VALUES (:reqId)'
 		);
 
