@@ -99,7 +99,7 @@ class PDOMySQL{
 		$curr_date = $curr_date_query->fetch(PDO::FETCH_ASSOC);
 		$curr_time_query = $db->query('SELECT CURRENT_TIME()');
 		$curr_time = $curr_time_query->fetch(PDO::FETCH_ASSOC);
-		$currentFloor_query = $db->query("SELECT currentFLoor FROM elevator");
+		$currentFloor_query = $db->query("SELECT currentFLoor FROM elevator WHERE nodeID = 512");
 		$currentFloor = $currentFloor_query->fetch(PDO::FETCH_ASSOC);
 
 		$stmt = $db->prepare(
