@@ -111,7 +111,7 @@ class PDOMySQL{
 			'date' => $curr_date['CURRENT_DATE()'],
 			'time' => $curr_time['CURRENT_TIME()'],
 			'status' => $status,
-			'currentFloor' => $currentFloor,
+			'currentFloor' => $currentFloor['currentFloor'],
 			'requestedFloor' => $floornum
 		];
 		$stmt->execute($params);
