@@ -89,7 +89,7 @@ class PDOMySQL{
 		$stmt->execute($params);
 		return $stmt;
 	}
-	public function reqFloor($floornum)
+	public function requestFloor($floornum)
 	{
 		$db = $this->getConnection();
 
@@ -100,7 +100,7 @@ class PDOMySQL{
 
 		$stmt = $db->prepare(
 			'INSERT INTO elv_req_log (nodeID,date,time,status,currentFloor,requestedFloor)
-			VALUES (:nodeID,:date,:time,:requestedFloor)'
+			VALUES (:nodeID,:date,:time,:status,:currentFloor,:requestedFloor)'
 		);
 		$params = [
 			'nodeID' => 0x200,
@@ -111,8 +111,8 @@ class PDOMySQL{
 			'requestedFloor' => $floornum
 		];
 		$stmt->execute($params);
-		$reqId_query = $db->query("SELECT reqId FROM elv_req_log ORDER BY reqId DESC LIMIT 1'");
-		$reqId = $userid_query->fetch(PDO::FETCH_ASSOC);
+		$reqId_query = $db->query("SELECT reqId FROM elv_req_log ORDER BY reqId DESC LIMIT 1");
+		$reqId = $reqId_query->fetch(PDO::FETCH_ASSOC);
 		$stmt = $db->prepare(
 			'INSERT INTO elv_req_que (reqId)
 			VALUES (:reqId)'
