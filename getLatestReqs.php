@@ -6,7 +6,7 @@
   // lookup all hints from array if $q is different from ""
   $latestReqs = array();
   if ($q !== "") {
-      echo "<table style=\"width:100% color:white\" ><tr>";
+      echo "<table style=\"width:100%\" ><tr>";
       echo "<th>reqId</th>";
       echo "<th>nodeID</th>";
       echo "<th>date</th>";
