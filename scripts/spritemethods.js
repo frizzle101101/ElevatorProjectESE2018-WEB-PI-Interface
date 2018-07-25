@@ -2,8 +2,12 @@ function gameLoop () {
 
   window.requestAnimationFrame(gameLoop);
 
-  elv.update();
-  elv.render();
+  floor1.update();
+  floor2.update();
+  floor3.update();
+  floor1.render();
+  floor2.render();
+  floor3.render();
 }
 function sprite (options) {
 
@@ -52,43 +56,42 @@ function sprite (options) {
 }
 
 var elvImage = new Image();
-elvImage.src = "images/elv_sprite.png";
-var canvas = document.getElementById("elvAnimation");
-canvas.width = 83;
-canvas.height = 79;
-var elv = sprite({
-    context: canvas.getContext("2d"),
-    width: canvas.width,
-    height: canvas.height,
+elvImage.src = "../images/elv_sprite.png";
+var canvas1 = document.getElementById("elvAnimation1");
+var canvas2 = document.getElementById("elvAnimation2");
+var canvas3 = document.getElementById("elvAnimation3");
+canvas1.width  = 83;
+canvas2.width  = 83;
+canvas3.width  = 83;
+canvas1.height = 79;
+canvas2.height = 79;
+canvas3.height = 79;
+var floor1 = sprite({
+    context: canvas1.getContext("2d"),
+    width: canvas1.width,
+    height: canvas1.height,
     image: elvImage,
     numberOfFrames: 4,
     ticksPerFrame: 30
 });
-elv.render();
+var floor2 = sprite({
+    context: canvas2.getContext("2d"),
+    width: canvas2.width,
+    height: canvas2.height,
+    image: elvImage,
+    numberOfFrames: 4,
+    ticksPerFrame: 30
+});
+var floor3 = sprite({
+    context: canvas3.getContext("2d"),
+    width: canvas3.width,
+    height: canvas3.height,
+    image: elvImage,
+    numberOfFrames: 4,
+    ticksPerFrame: 30
+});
+floor1.render();
+floor2.render();
+floor3.render();
 
 elvImage.addEventListener("load", gameLoop);
-
-
-function reqFloor(str) {
-  var xhttp;
-  if (str == "") {
-    document.getElementById("txtHint").innerHTML = "";
-    return;
-  }
-  xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("txtHint").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "reqFloor.php?q="+str, true);
-  xhttp.send();
-}
-
-var fBtn1 = document.getElementById("req1");
-var fBtn2 = document.getElementById("req2");
-var fBtn3 = document.getElementById("req3");
-
-fBtn1.addEventListener("click", function(){reqFloor(1);});
-fBtn2.addEventListener("click", function(){reqFloor(2);});
-fBtn3.addEventListener("click", function(){reqFloor(3);});

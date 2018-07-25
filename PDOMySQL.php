@@ -129,5 +129,25 @@ class PDOMySQL{
 		$stmt->execute($params);
 		return $stmt;
 	}
+	public function getLatestReqs($numqueries)
+	{
+		$nodeID = 0x200;
+		$status = 0;
+		$db = $this->getConnection();
+		$stmt = $db->prepare("SELECT * FROM elv_req_log ORDER BY reqId DESC LIMIT (:numqueries)");
+		$params = [
+			'numqueries' => $numqueries
+		];
+		$stmt->execute($params);
+
+		$i = 0;
+		$rtn = array();
+		while ($latestReq = $stmt->fetch()) {
+				$rtn[$i] = $latestReq;
+				$i = $i + 1;
+		}
+
+		return $rtn;
+	}
 }
 ?>
