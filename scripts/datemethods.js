@@ -3,21 +3,23 @@ var dobAB = new Date(1989, 6, 18);
 
 var dToday = new Date();
 
-function calculateAge(birthdate){
-	var ageDiffms = dToday.getTime() - birthdate.getTime();
+function calculateAge(birthdate, currentdate){
+	var ageDiffms = currentdate.getTime() - birthdate.getTime();
 	var ageDate = new Date(ageDiffms);
 	return Math.abs(ageDate.getFullYear() - 1970);
 }
 
 var currentYear = dToday.getFullYear();
-var ageAB = calculateAge(dobAB);
-var ageAF = calculateAge(dobAF);
+var ageAB = calculateAge(dobAB, dToday);
+var ageAF = calculateAge(dobAF, dToday);
 
 
-var copyDate = document.getElementById('copydate');
-copyDate.innerHTML = '' + currentYear + '';
+var copyrightDate = document.getElementById('copydate');
+copyrightDate.innerHTML = ' ' + currentYear + ' ';
 
-var fritzAge = document.getElementById('fritzAge');
-fritzAge.innerHTML = '' + ageAF + '';
-var bonnellAge = document.getElementById('bonnellAge');
-bonnellAge.innerHTML = '' + ageAb + '';
+
+
+var AF_Age = document.getElementById('fritzAge');
+AF_Age.innerHTML = ' ' + ageAF + ' ';
+var AB_Age = document.getElementById('bonnellAge');
+AB_Age.innerHTML = ' ' + ageAb + ' ';
