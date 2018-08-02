@@ -22,4 +22,4 @@ copyrightDate.innerHTML = ' ' + currentYear + ' ';
 var AF_Age = document.getElementById('fritzAge');
 AF_Age.innerHTML = ' ' + ageAF + ' ';
 var AB_Age = document.getElementById('bonnellAge');
-AB_Age.innerHTML = ' ' + ageAb + ' ';
+AB_Age.innerHTML = ' ' + ageAB + ' ';
