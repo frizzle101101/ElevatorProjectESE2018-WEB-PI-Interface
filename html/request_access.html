@@ -14,132 +14,130 @@
 		<div class="container">
 		<h1>Request Access</h1>
 		<div class="row">
-		<form action="request_access.php" method="post">
-		<div class="col-xs-12 col-sm-6">
-			<fieldset>
-				<legend>Login Details</legend>
-				<div class="row">
-					<div class="col-xs-4 col-sm-12"><label>Username:</label></div>
-					<div class="col-xs-8 col-sm-12"><input style="width: 100%" type="text" id="username" name="username" required class="inputbox"/></div>
-					<div class="col-xs-12"><p></p></div>
-					<div class="col-xs-4 col-sm-12"><label>Password:</label></div>
-					<div class="col-xs-8 col-sm-12"><input style="width: 100%" type="password" id="password" name="password" required class="inputbox"/></div>
-					<div class="col-xs-12"><p></p></div>
-					<div class="col-xs-4 col-sm-12"><label>Confirm Password:</label></div>
-					<div class="col-xs-8 col-sm-12"><input style="width: 100%" type="password" id="confirm_password" name="comfirm_password" onchange="validatePassword()" required class="inputbox"/></div>
+			<form action="request_access.php" method="post">
+				<div class="col-xs-12 col-sm-6">
+					<fieldset>
+						<legend>Login Details</legend>
+						<div class="row">
+							<div class="col-xs-4 col-sm-12"><label>Username:</label></div>
+							<div class="col-xs-8 col-sm-12"><input style="width: 100%" type="text" id="username" name="username" required class="inputbox"/></div>
+							<div class="col-xs-12"><p></p></div>
+							<div class="col-xs-4 col-sm-12"><label>Password:</label></div>
+							<div class="col-xs-8 col-sm-12"><input style="width: 100%" type="password" id="password" name="password" required class="inputbox"/></div>
+							<div class="col-xs-12"><p></p></div>
+							<div class="col-xs-4 col-sm-12"><label>Confirm Password:</label></div>
+							<div class="col-xs-8 col-sm-12"><input style="width: 100%" type="password" id="confirm_password" name="comfirm_password" onchange="validatePassword()" required class="inputbox"/></div>
 
+						</div>
+						</legend>
+					</fieldset>
 				</div>
-				</legend>
-			</fieldset>
-		</div>
-		<div class="col-xs-12 col-sm-6">
-			<fieldset>
-				<legend>Contact Details</legend>
+				<div class="col-xs-12 col-sm-6">
+					<fieldset>
+						<legend>Contact Details</legend>
+						<div class="row">
+							<div class="col-xs-4 col-sm-12"><label>First Name:</label></div>
+							<div class="col-xs-8 col-sm-12"><input style="width: 100%" type="text" name="first_name" required class="inputbox"/></div>
+							<div class="col-xs-12"><p></p></div>
+							<div class="col-xs-4 col-sm-12"><label>Last Name:</label></div>
+							<div class="col-xs-8 col-sm-12"><input style="width: 100%" type="text" name=" last_name" required class="inputbox"/></div>
+							<div class="col-xs-12"><p></p></div>
+							<div class="col-xs-4 col-sm-12"><label>Email:</label></div>
+							<div class="col-xs-8 col-sm-12"><input style="width: 100%" type="email" name="email" required class="inputbox"/></div>
+							<div class="col-xs-12"><p></p></div>
+							<div class="col-xs-4 col-sm-12"><label>Website:</label></div>
+							<div class="col-xs-8 col-sm-12"><input style="width: 100%" type="url" name="website" class="inputbox"/></div>
+							<div class="col-xs-12"><p></p></div>
+							<div class="col-xs-4 col-sm-12"><label>Birth date:</label></div>
+							<div class="col-xs-8 col-sm-12"><input style="width: 100%" type="date" name="birth_date" class="inputbox"/></div>
+							<div class="col-xs-12"><p></p></div>
+							<div class="col-xs-4 col-sm-12"><label>Access Type:</label>
+								<label>Faculty <input type="radio" name="user_type" value="faculty" required class="inputbox"/></label>
+								<label>Student <input type="radio" name="user_type" value="student" required class="inputbox"/></label>
+							</div>
+						</div>
+					</fieldset>
+				</div>
 				<div class="row">
-					<div class="col-xs-4 col-sm-12"><label>First Name:</label></div>
-					<div class="col-xs-8 col-sm-12"><input style="width: 100%" type="text" name="first_name" required class="inputbox"/></div>
-					<div class="col-xs-12"><p></p></div>
-					<div class="col-xs-4 col-sm-12"><label>Last Name:</label></div>
-					<div class="col-xs-8 col-sm-12"><input style="width: 100%" type="text" name=" last_name" required class="inputbox"/></div>
-					<div class="col-xs-12"><p></p></div>
-					<div class="col-xs-4 col-sm-12"><label>Email:</label></div>
-					<div class="col-xs-8 col-sm-12"><input style="width: 100%" type="email" name="email" required class="inputbox"/></div>
-					<div class="col-xs-12"><p></p></div>
-					<div class="col-xs-4 col-sm-12"><label>Website:</label></div>
-					<div class="col-xs-8 col-sm-12"><input style="width: 100%" type="url" name="website" class="inputbox"/></div>
-					<div class="col-xs-12"><p></p></div>
-					<div class="col-xs-4 col-sm-12"><label>Birth date:</label></div>
-					<div class="col-xs-8 col-sm-12"><input style="width: 100%" type="date" name="birth_date" class="inputbox"/></div>
-					<div class="col-xs-12"><p></p></div>
-					<div class="col-xs-4 col-sm-12"><label>Access Type:</label>
-						<label>Faculty <input type="radio" name="user_type" value="faculty" required class="inputbox"/></label>
-						<label>Student <input type="radio" name="user_type" value="student" required class="inputbox"/></label>
+					<div class="col-xs-12 col-sm-6">
+						<fieldset>
+							<legend>Project Relation</legend>
+							<p>I currently ... (check all that apply)<br/><br/>
+								<input type="checkbox" name="interest" value="none" /> Have no involment in Project <br />
+								<input type="checkbox" name="interest" value="instructor" /> An instructor in this Project <br/>
+								<input type="checkbox" name="interest" value="instructor_other" /> An instructor in a different Project <br/>
+								<input type="checkbox" name="interest" value="student" /> A student in this Project <br/>
+								<input type="checkbox" name="interest" value="student_other" /> A student in a different Project <br/>
+								<input type="checkbox" name="interest" value="admin" /> A College Administrator <br/>
+								<input type="checkbox" name="interest" value="extenal" /> An external reviewer <br/>
+							</p>
+						</fieldset>
+					</div>
+					<div class="col-xs-12 col-sm-6">
+						<fieldset>
+							<legend>Other Info</legend>
+							<p>Tell us a bit about yourself<br />
+							<textarea id="mytxt" placeholder="Other details ... " class="formtext"></textarea>
+							<p id="remaningCharsAlert"></p>
+							</p>
+						</fieldset>
+						<p>
+							<input id="submitbtn" type="submit" value="Submit Request" class="submitbutton" onclick="validatePassword()"/>
+						</p>
 					</div>
 				</div>
-			</fieldset>
+			</form>
 		</div>
-		<div class="row">
-		<div class="col-xs-12 col-sm-6">
-			<fieldset>
-				<legend>Project Relation</legend>
-				<p>I currently ... (check all that apply)<br/><br/>
-					<input type="checkbox" name="interest" value="none" /> Have no involment in Project <br />
-					<input type="checkbox" name="interest" value="instructor" /> An instructor in this Project <br/>
-					<input type="checkbox" name="interest" value="instructor_other" /> An instructor in a different Project <br/>
-					<input type="checkbox" name="interest" value="student" /> A student in this Project <br/>
-					<input type="checkbox" name="interest" value="student_other" /> A student in a different Project <br/>
-					<input type="checkbox" name="interest" value="admin" /> A College Administrator <br/>
-					<input type="checkbox" name="interest" value="extenal" /> An external reviewer <br/>
-				</p>
-			</fieldset>
 		</div>
-		<div class="col-xs-12 col-sm-6">
-			<fieldset>
-				<legend>Other Info</legend>
-				<p>Tell us a bit about yourself<br />
-				<textarea id="mytxt" placeholder="Other details ... " class="formtext"></textarea>
-				<p id="remaningCharsAlert"></p>
-				</p>
-			</fieldset>
-			<p>
-				<input id="submitbtn" type="submit" value="Submit Request" class="submitbutton" onclick="validatePassword()"/>
-			</p>
-		</form>
-		<script>
-		function validateForm(){
-			var username = document.getElementById("username");
-			var password = document.getElementById("password");
-			var conf_pass = document.getElementById("confirm_password");
-			var mytxt = document.getElementById("mytxt");
-
-		  if(password.value != confirm_password.value) {
-		    conf_pass.setCustomValidity("Passwords Don't Match");
-		  }
-			else {
-		    conf_pass.setCustomValidity('');
-		  }
-
-			if(mytxt.value.length > 180){
-	     	mytxt.setCustomValidity("Exceded 180 Charecters");
-			}
-			else {
-				mytxt.setCustomValidity('');
-			}
-
-			if(username.value.length < 7){
-	     	username.setCustomValidity("Must be at least 7 Characters");
-			}
-			else {
-				username.setCustomValidity('');
-			}
-
-			if(password.value.length < 7){
-	     	password.setCustomValidity("Must be at least 7 Characters");
-			}
-			else {
-				password.setCustomValidity('');
-			}
-
-		}
-		function validateTextarea(){
-			var mytxt = document.getElementById('mytxt');
-			var remaningCharsAlert = document.getElementById('remaningCharsAlert');
-			remaningCharsAlert.innerHTML = (180 - mytxt.value.length) + " Charecters Remaning";
-
-		}
-
-		document.getElementById("mytxt").addEventListener('keydown', function(){validateTextarea();});
-		document.getElementById("submitbtn").addEventListener('click', function(){validateForm();});
-
-		</script>
-	</div>
-</div>
-
-	<br>
-	</div>
 	</body>
-
-
+	<br>
 	<footer>Copyright &copy <span id='copydate'> </span> Aaron Fritz.</footer>
 	<script src='../scripts/datemethods.js'></script>
+	<script>
+	function validateForm(){
+		var username = document.getElementById("username");
+		var password = document.getElementById("password");
+		var conf_pass = document.getElementById("confirm_password");
+		var mytxt = document.getElementById("mytxt");
+
+	  if(password.value != confirm_password.value) {
+	    conf_pass.setCustomValidity("Passwords Don't Match");
+	  }
+		else {
+	    conf_pass.setCustomValidity('');
+	  }
+
+		if(mytxt.value.length > 180){
+	   	mytxt.setCustomValidity("Exceded 180 Charecters");
+		}
+		else {
+			mytxt.setCustomValidity('');
+		}
+
+		if(username.value.length < 7){
+	   	username.setCustomValidity("Must be at least 7 Characters");
+		}
+		else {
+			username.setCustomValidity('');
+		}
+
+		if(password.value.length < 7){
+	   	password.setCustomValidity("Must be at least 7 Characters");
+		}
+		else {
+			password.setCustomValidity('');
+		}
+
+	}
+	function validateTextarea(){
+		var mytxt = document.getElementById('mytxt');
+		var remaningCharsAlert = document.getElementById('remaningCharsAlert');
+		remaningCharsAlert.innerHTML = (180 - mytxt.value.length) + " Charecters Remaning";
+
+	}
+
+	document.getElementById("mytxt").addEventListener('keydown', function(){validateTextarea();});
+	document.getElementById("submitbtn").addEventListener('click', function(){validateForm();});
+
+	</script>
 </html>
