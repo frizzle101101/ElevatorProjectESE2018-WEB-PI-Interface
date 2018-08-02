@@ -129,5 +129,37 @@ class PDOMySQL{
 		$stmt->execute($params);
 		return $stmt;
 	}
+	public function getLatestReqs($numqueries)
+	{
+		$db = $this->getConnection();
+		$recentreq_query = $db->query("SELECT * FROM elv_req_log ORDER BY reqId DESC LIMIT 10");
+
+
+		$i = 0;
+		$rtn = "";
+		while ($latestReq = $recentreq_query->fetch(PDO::FETCH_ASSOC)) {
+			$rtn .= "<tr>";
+			$rtn .=  "<td>". $latestReq['reqId'] ."</td>";
+			$rtn .=  "<td>". $latestReq['nodeID'] ."</td>";
+			$rtn .=  "<td>". $latestReq['date'] ."</td>";
+			$rtn .=  "<td>". $latestReq['time'] ."</td>";
+			$rtn .=  "<td>". $latestReq['status'] ."</td>";
+			$rtn .=  "<td>". $latestReq['currentFloor'] ."</td>";
+			$rtn .=  "<td>". $latestReq['requestedFloor'] ."</td>";
+			$rtn .=  "<td>". $latestReq['source'] ."</td>";
+			$rtn .=  "</tr>";
+
+		}
+
+		return $rtn;
+	}
+	public function getCurrentFloor()
+	{
+		$db = $this->getConnection();
+		$crrfloor_query = $db->query("SELECT currentFloor FROM elevator WHERE nodeID = 512");
+		$currfloor = $crrfloor_query->fetch(PDO::FETCH_ASSOC);
+		$rtn = $currfloor['currentFloor'];
+		return $rtn;
+	}
 }
 ?>

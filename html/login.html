@@ -16,7 +16,7 @@
 					<div class="col-md-4">
 						<fieldset>
 							<legend>Login</legend>
-								<p>Usemame: <br><input style="width: 100%" type="text" name="username" required/> </p>
+								<p>Usemame: <br><input style="width: 100%" type="text" id="username" name="username" required/> </p>
 								<p>Password: <br><input style="width: 100%" type="password" id="password" name="password" required /> </p>
 							</legend>
 							<input type="submit" value="Log in" class="submitbutton" />
@@ -30,4 +30,31 @@
 	</body>
 	<footer>Copyright &copy <span id='copydate'> </span> Aaron Fritz.</footer>
 	<script src='../scripts/datemethods.js'></script>
+	<script>
+	function focusUsername(){
+		document.getElementById("username").focus();
+	}
+
+	function validateForm(){
+		var username = document.getElementById("username");
+		var password = document.getElementById("password");
+		if(username.value.length < 7){
+			username.setCustomValidity("Must be at least 7 Characters");
+		}
+		else {
+			username.setCustomValidity('');
+		}
+
+		if(password.value.length < 7){
+			password.setCustomValidity("Must be at least 7 Characters");
+		}
+		else {
+			password.setCustomValidity('');
+		}
+
+	}
+
+	window.addEventListener("load", function(){focusUsername();});
+	document.getElementById("submitbtn").addEventListener('click', function(){validateForm();});
+	</script>
 </html>

@@ -39,6 +39,9 @@ fieldset {
 fieldset input{
 	color: black;
 }
+fieldset span table{
+	color: white;
+}
 
 
 legend {
