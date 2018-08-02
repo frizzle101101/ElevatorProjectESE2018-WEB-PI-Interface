@@ -20,7 +20,7 @@
 				<legend>Login Details</legend>
 				<div class="row">
 					<div class="col-xs-4 col-sm-12"><label>Username:</label></div>
-					<div class="col-xs-8 col-sm-12"><input style="width: 100%" type="text" name="username" required class="inputbox"/></div>
+					<div class="col-xs-8 col-sm-12"><input style="width: 100%" type="text" id="username" name="username" required class="inputbox"/></div>
 					<div class="col-xs-12"><p></p></div>
 					<div class="col-xs-4 col-sm-12"><label>Password:</label></div>
 					<div class="col-xs-8 col-sm-12"><input style="width: 100%" type="password" id="password" name="password" required class="inputbox"/></div>
@@ -77,23 +77,60 @@
 			<fieldset>
 				<legend>Other Info</legend>
 				<p>Tell us a bit about yourself<br />
-				<textarea placeholder="Other details ... " class="formtext"></textarea>
+				<textarea id="mytxt" placeholder="Other details ... " class="formtext"></textarea>
+				<p id="remaningCharsAlert"></p>
 				</p>
 			</fieldset>
 			<p>
-				<input type="submit" value="Submit Request" class="submitbutton" onclick="validatePassword()"/>
+				<input id="submitbtn" type="submit" value="Submit Request" class="submitbutton" onclick="validatePassword()"/>
 			</p>
 		</form>
 		<script>
-		var password = document.getElementById("password");
-		var confirm_password = document.getElementById("confirm_password");
-		function validatePassword(){
+		function validateForm(){
+			var username = document.getElementById("username");
+			var password = document.getElementById("password");
+			var conf_pass = document.getElementById("confirm_password");
+			var mytxt = document.getElementById("mytxt");
+
 		  if(password.value != confirm_password.value) {
-		    confirm_password.setCustomValidity("Passwords Don't Match");
-		  } else {
-		    confirm_password.setCustomValidity('');
+		    conf_pass.setCustomValidity("Passwords Don't Match");
 		  }
+			else {
+		    conf_pass.setCustomValidity('');
+		  }
+
+			if(mytxt.value.length > 180){
+	     	mytxt.setCustomValidity("Exceded 180 Charecters");
+			}
+			else {
+				mytxt.setCustomValidity('');
+			}
+
+			if(username.value.length < 7){
+	     	username.setCustomValidity("Must be at least 7 Characters");
+			}
+			else {
+				username.setCustomValidity('');
+			}
+
+			if(password.value.length < 7){
+	     	password.setCustomValidity("Must be at least 7 Characters");
+			}
+			else {
+				password.setCustomValidity('');
+			}
+
 		}
+		function validateTextarea(){
+			var mytxt = document.getElementById('mytxt');
+			var remaningCharsAlert = document.getElementById('remaningCharsAlert');
+			remaningCharsAlert.innerHTML = (180 - mytxt.value.length) + " Charecters Remaning";
+
+		}
+
+		document.getElementById("mytxt").addEventListener('keydown', function(){validateTextarea();});
+		document.getElementById("submitbtn").addEventListener('click', function(){validateForm();});
+
 		</script>
 	</div>
 </div>
