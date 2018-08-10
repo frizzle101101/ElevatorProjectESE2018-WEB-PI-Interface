@@ -40,7 +40,7 @@ function sprite (options) {
 
       tickCount -= 1;
 
-      if (tickCount > ticksPerFrame) {
+      if (tickCount < ticksPerFrame) {
 
         tickCount = 4;
         if (frameIndex > -1) {
