@@ -28,7 +28,24 @@ function getLatestReqs(str) {
   };
   xhttp.open("GET", "getLatestReqs.php?q="+str, true);
   xhttp.send();
-  setTimeout(function(){getLatestReqs(str);},5000);
+  setTimeout(function(){getLatestReqs(str);},1000);
+}
+
+function getQue(str) {
+  var xhttp;
+  if (str == "") {
+    document.getElementById("que").innerHTML = "";
+    return;
+  }
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("que").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "getQue.php?q="+str, true);
+  xhttp.send();
+  setTimeout(function(){getQue(str);},1000);
 }
 
 function getCurrentFloor() {
@@ -51,6 +68,7 @@ var fBtn2 = document.getElementById("req2");
 var fBtn3 = document.getElementById("req3");
 
 window.addEventListener("load", function(){getLatestReqs(10);});
+window.addEventListener("load", function(){getQue(10);});
 window.addEventListener("load", function(){getCurrentFloor();});
 fBtn1.addEventListener("click", function(){reqFloor(1);});
 fBtn2.addEventListener("click", function(){reqFloor(2);});
