@@ -22,7 +22,7 @@ function sprite (options) {
   that.height = options.height;
   that.image = options.image;
 
-  that.update = function () {
+  that.openD = function () {
 
       tickCount += 1;
 
@@ -32,6 +32,20 @@ function sprite (options) {
         if (frameIndex < numberOfFrames - 1) {
             // Go to the next frame
             frameIndex += 1;
+        }
+      }
+  };
+
+  that.clsoeD = function () {
+
+      tickCount -= 1;
+
+      if (tickCount > ticksPerFrame) {
+
+        tickCount = 4;
+        if (frameIndex > -1) {
+            // Go to the next frame
+            frameIndex -= 1;
         }
       }
   };
@@ -50,6 +64,22 @@ function sprite (options) {
          0,
          that.width,
          that.height);
+  };
+
+  that.openDoors = function () {
+    var i;
+    for (i = 0; i < 4; i++) {
+      that.openD();
+      that.render();
+    }
+  };
+
+  that.closeDoors = function () {
+    var i;
+    for (i = 0; i < 4; i++) {
+      that.clsoeD();
+      that.render();
+    }
   };
 
   return that;
@@ -152,21 +182,24 @@ function getCurrentFloor() {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("currentFloor").innerHTML = this.responseText;
-      var canvas1 = document.getElementById("elvAnimation1");
-      var canvas2 = document.getElementById("elvAnimation2");
-      var canvas3 = document.getElementById("elvAnimation3");
 
       if(this.responseText=="1")
       {
-        floor1.update();
+        floor1.openDoors();
+        floor2.closeDoors();
+        floor3.closeDoors();
       }
       else if(this.responseText=="2")
       {
-        floor2.update();
+        floor1.closeDoors();
+        floor2.openDoors();
+        floor3.closeDoors();
       }
       else if(this.responseText=="3")
       {
-        floor3.update();
+        floor1.closeDoors();
+        floor2.closeDoors();
+        floor3.openDoors();
       }
     }
   };
