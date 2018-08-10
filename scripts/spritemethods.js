@@ -96,17 +96,18 @@ floor3.render();
 
 elvImage.addEventListener("load", gameLoop);
 
-document.getElementById("currentFloor").addEventListener("change", function(){
+var currentFloor = document.getElementById("currentFloor");
+currentFloor.addEventListener("onchange", function(){
   floor1.update();
-  if(document.getElementById("currentFloor").innerHTML == "1")
+  if(currentFloor.innerHTML == "1")
   {
     floor1.update();
   }
-  else if(document.getElementById("currentFloor").innerHTML == "2")
+  else if(currentFloor.innerHTML == "2")
   {
     floor2.update();
   }
-  else if(document.getElementById("currentFloor").innerHTML == "3")
+  else if(currentFloor.innerHTML == "3")
   {
     floor3.update();
   }
