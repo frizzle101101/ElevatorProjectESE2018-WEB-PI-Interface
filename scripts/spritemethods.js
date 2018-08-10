@@ -96,7 +96,7 @@ floor3.render();
 
 elvImage.addEventListener("load", gameLoop);
 
-document.getElementById("currentFloor").addEventListener("onchange", function(){
+document.getElementById("currentFloor").addEventListener("change", function(){
   floor1.update();
   if(document.getElementById("currentFloor").innerHTML == "1")
   {
