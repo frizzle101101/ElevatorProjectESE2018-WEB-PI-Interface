@@ -208,7 +208,7 @@ function getCurrentFloor() {
 
 
 
-  setTimeout(function(){getCurrentFloor();},1000);
+  setTimeout(function(){getCurrentFloor();},10);
 }
 
 
