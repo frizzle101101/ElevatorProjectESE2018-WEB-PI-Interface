@@ -156,12 +156,12 @@ class PDOMySQL{
 	public function getQue($numqueries)
 	{
 		$db = $this->getConnection();
-		$recentreq_query = $db->query("SELECT * FROM elv_req_que ORDER BY reqId DESC LIMIT 10");
+		$que_query = $db->query("SELECT * FROM elv_req_que LIMIT 10");
 
 
 		$i = 0;
 		$rtn = "";
-		while ($latestReq = $recentreq_query->fetch(PDO::FETCH_ASSOC)) {
+		while ($latestReq = $que_query->fetch(PDO::FETCH_ASSOC)) {
 			$rtn .= "<tr>";
 			$rtn .=  "<td>". $latestReq['reqId'] ."</td>";
 			$rtn .=  "</tr>";
