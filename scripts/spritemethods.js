@@ -98,9 +98,15 @@ elvImage.addEventListener("load", gameLoop);
 
 document.getElementById("currentFloor").addEventListener("onchange", function(){
   if(document.getElementById("currentFloor").innerHTML == 1)
+  {
     floor1.update();
+  }
   if(document.getElementById("currentFloor").innerHTML == 2)
+  {
     floor2.update();
+  }
   if(document.getElementById("currentFloor").innerHTML == 3)
+  {
     floor3.update();
+  }
 });
