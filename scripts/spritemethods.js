@@ -2,9 +2,9 @@ function gameLoop () {
 
   window.requestAnimationFrame(gameLoop);
 
-  floor1.update();
-  floor2.update();
-  floor3.update();
+  //floor1.update();
+  //floor2.update();
+  //floor3.update();
   floor1.render();
   floor2.render();
   floor3.render();
@@ -95,3 +95,12 @@ floor2.render();
 floor3.render();
 
 elvImage.addEventListener("load", gameLoop);
+
+document.getElementById("currentFloor").addEventListener("onchange", function(){
+  if(document.getElementById("currentFloor").innerHTML == 1)
+    floor1.update();
+  if(document.getElementById("currentFloor").innerHTML == 2)
+    floor2.update();
+  if(document.getElementById("currentFloor").innerHTML == 3)
+    floor3.update();
+});
